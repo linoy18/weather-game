@@ -9,10 +9,15 @@ p {
   margin-left: 0.5em;
 }
 
-h1{
-    margin-bottom: 0.2em;
+h1 {
+  margin: 0.6em 0;
+  font-weight: 500;
 }
 
-mat-form-field{
-    width: 300px;
+h2 {
+  margin-right: 0.4em;
+}
+
+mat-form-field {
+  width: 300px;
 }

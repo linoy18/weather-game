@@ -1,14 +1,14 @@
-  <h1>Weather Game</h1>
-  <div class="row-container">
-  <h2>City Name:</h2>
+<h1>Weather Game</h1>
+<h4>Guess the city temperature in Celsius!</h4><br>
+<div class="row-container">
+  <h2>The name of the city is ...</h2>
   <h2 [innerHTML]="currentCity"></h2>
-  </div>
+</div>
 <div class="row-container">
   <mat-form-field>
     <mat-label>Your Guess:</mat-label>
     <input
       matInput
-      placeholder="Guess the city weather temperature in celsius"
       [(ngModel)]="temperatureGuess"
   /></mat-form-field>
 </div>

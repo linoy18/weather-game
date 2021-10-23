@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Observable } from 'rxjs';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -33,11 +32,8 @@ export class QuestionsComponent implements OnInit {
 
   public checkHandler() {
     this.checkResult();
-    this.attempts++;
     this.getCurrentCity();
-    if (this.attempts == 5) {
-      this.finishGame.emit(true);
-    }
+
   }
   public checkResult() {
     this.getRealTemperatureFromAPI();
@@ -52,7 +48,12 @@ export class QuestionsComponent implements OnInit {
           tempGuess: this.temperatureGuess,
           tempReal: this.temperatureReal,
         });
+        this.attempts++;
+        if (this.attempts == 5) {
+          this.finishGame.emit(true);
+        }
       });
+
   }
 
 }

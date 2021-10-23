@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { SingleGameResult } from 'src/app/models/singleGameResult.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { SingleGameResult } from 'src/app/models/SingleGameResult.model';
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({

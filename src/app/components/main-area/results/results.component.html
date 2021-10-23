@@ -1,5 +1,5 @@
-<div>
-    <div [innerHTML]="win ? congrats : sorry "></div>
+<div class="finish-game">
+     <h2 [innerHTML]="win ? congrats : sorry "></h2> 
   <button mat-raised-button color="primary" (click)="startAgain()">
     Start The Game Again
   </button>

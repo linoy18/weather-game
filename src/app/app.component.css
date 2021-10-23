@@ -16,3 +16,15 @@ hr.solid {
     width: 100vw;
     height: 100vh;
 }
+
+h4{
+    text-align: center;
+    margin-top: 1em;
+}
+
+.game-results{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+}
