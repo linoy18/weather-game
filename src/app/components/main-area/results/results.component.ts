@@ -8,8 +8,8 @@ import { WeatherService } from 'src/app/services/weather.service';
 })
 export class ResultsComponent implements OnInit {
   public win: boolean = false;
-  public congrats: string = 'You Won the game!';
-  public sorry: string = 'Sorry, you lose the game...';
+  public congrats: string = 'You won the game!';
+  public sorry: string = 'Sorry, you lost the game...';
 
   constructor(private weatherService: WeatherService) {}
 
