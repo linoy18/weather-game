@@ -1,0 +1,18 @@
+.row-container {
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+  margin: 0.2em;
+}
+
+p {
+  margin-left: 0.5em;
+}
+
+h1{
+    margin-bottom: 0.2em;
+}
+
+mat-form-field{
+    width: 300px;
+}

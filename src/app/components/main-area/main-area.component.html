@@ -1,0 +1,9 @@
+<div>
+  <app-questions
+    *ngIf="!isGameFinished"
+    (finishGame)="onFinish($event)"
+    class="main-area-container"
+  >
+  </app-questions>
+  <app-results *ngIf="isGameFinished" class="main-area-container"></app-results>
+</div>
