@@ -3,14 +3,9 @@
     [ngStyle]="{ 'background-color': win ? '#438e43' : '#b83f3f' }"
     class="single-container"
   >
-  <!-- <mat-card-header><img mat-card-image src=""></mat-card-header> -->
     <mat-card-subtitle><p>You guessed:</p></mat-card-subtitle>
-    <mat-card-title
-      ><div [innerHTML]="result.tempGuess"></div
-    ></mat-card-title>
+    <mat-card-title><div [innerHTML]="result.tempGuess"></div></mat-card-title>
     <mat-card-subtitle><p>The Real Temperature:</p></mat-card-subtitle>
-    <mat-card-title>
-      <div [innerHTML]="result.tempReal"></div
-    ></mat-card-title>
+    <mat-card-title> <div [innerHTML]="result.tempReal"></div></mat-card-title>
   </mat-card>
 </div>

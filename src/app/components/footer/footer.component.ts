@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
 
   public subscribeToGetGameResults() {
     return this.weatherService
-      .getGameResults()
+      .calculatesSingularGameResults()
       .subscribe((item) => (this.gameResultsArray = item));
   }
 }

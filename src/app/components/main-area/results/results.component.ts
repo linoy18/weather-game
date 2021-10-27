@@ -7,7 +7,7 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./results.component.css'],
 })
 export class ResultsComponent implements OnInit {
-  public win: boolean = false;
+  public win: boolean | undefined;
   public congrats: string = 'You won the game!';
   public sorry: string = 'Sorry, you lost the game...';
 

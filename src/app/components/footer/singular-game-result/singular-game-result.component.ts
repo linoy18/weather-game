@@ -8,14 +8,12 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./singular-game-result.component.css'],
 })
 export class SingularGameResultComponent implements OnInit {
-  @Input('index') indexOfMainArray: number | undefined;
-  @Input()
-  value!: SingleGameResult;
+  @Input() value!: SingleGameResult;
   public result: any;
   public win: boolean = false;
   derivation = 5;
 
-  constructor(private weatherService: WeatherService) {}
+  constructor( private weatherService : WeatherService) {}
 
   ngOnInit() {}
 
@@ -33,6 +31,7 @@ export class SingularGameResultComponent implements OnInit {
     ) {
       this.win = true;
       this.result.victory = true;
+      this.weatherService.winGame++;
     } else {
       this.win = false;
       this.result.victory = false;

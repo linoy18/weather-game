@@ -42,10 +42,10 @@ export class WeatherService {
   }
 
   /**
-   * calculates if the game is a win or lose
+   * calculates if a game is a win or lose
    * @return {[Observable<any>]}  gameResultsSubject the game results
    */
-  getGameResults(): Observable<any> {
+  calculatesSingularGameResults(): Observable<any> {
     this.gameResultsSubject.forEach((element) => {
       if (element[0] && element[0].victory) {
         this.winGame++;
