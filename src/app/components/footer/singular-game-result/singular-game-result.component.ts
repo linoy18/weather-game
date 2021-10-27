@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { SingleGameResult } from 'src/app/models/SingleGameResult.model';
 import { WeatherService } from 'src/app/services/weather.service';
 
@@ -7,22 +13,21 @@ import { WeatherService } from 'src/app/services/weather.service';
   templateUrl: './singular-game-result.component.html',
   styleUrls: ['./singular-game-result.component.css'],
 })
-export class SingularGameResultComponent implements OnInit {
+export class SingularGameResultComponent implements OnChanges {
   @Input() value!: SingleGameResult;
   public result: any;
   public win: boolean = false;
   derivation = 5;
 
-  constructor( private weatherService : WeatherService) {}
-
-  ngOnInit() {}
-
-  ngAfterContentInit() {
-    if(this.value){
-       this.result = this.value; 
-       this.checkVictory();
+  constructor(private weatherService: WeatherService) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.value) {
+      this.result = this.value;
+      this.checkVictory();
     }
   }
+
+  ngOnInit() {}
 
   public checkVictory() {
     if (
@@ -31,7 +36,7 @@ export class SingularGameResultComponent implements OnInit {
     ) {
       this.win = true;
       this.result.victory = true;
-      this.weatherService.winGame++;
+      this.weatherService.calculatesSingularGameResults();
     } else {
       this.win = false;
       this.result.victory = false;

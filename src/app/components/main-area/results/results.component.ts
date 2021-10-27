@@ -14,11 +14,11 @@ export class ResultsComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
-    this.subscribeToGetGameResults();
+    this.getGameResults();
   }
 
 
-  public subscribeToGetGameResults() {
+  public getGameResults() {
     if (this.weatherService.winGame >= 3) {
       this.win = true;
     } else {

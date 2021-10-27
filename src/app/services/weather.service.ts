@@ -9,16 +9,19 @@ import { SingleGameResult } from '../models/SingleGameResult.model';
   providedIn: 'root',
 })
 
-  /**
-   * Weather Service
-   */
+/**
+ * Weather Service
+ */
 export class WeatherService {
   public apiKey: string = '9cff733aee57cb05b63dd4f731c46bc4';
-  private gameResults: any = [];
+  private gameResults: any[] = [];
   public winGame: number = 0;
-  public gameResultsSubject = new BehaviorSubject<SingleGameResult[]>([]);
+  public gameResultsSubject = new Observable();
+  private _gameResultsSubject = new BehaviorSubject<SingleGameResult[]>([]);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.gameResultsSubject = this._gameResultsSubject.asObservable();
+  }
 
   /**
    * returns the current updated city weather
@@ -38,19 +41,18 @@ export class WeatherService {
    */
   addToGameResults(item: any) {
     this.gameResults.push(item);
-    this.gameResultsSubject.next(this.gameResults);
+    this._gameResultsSubject.next(this.gameResults);
   }
 
   /**
    * calculates if a game is a win or lose
    * @return {[Observable<any>]}  gameResultsSubject the game results
    */
-  calculatesSingularGameResults(): Observable<any> {
-    this.gameResultsSubject.forEach((element) => {
-      if (element[0] && element[0].victory) {
+  calculatesSingularGameResults(){
+    this.gameResults.forEach((element) => {
+      if (element.victory) {
         this.winGame++;
       }
     });
-    return this.gameResultsSubject.asObservable();
   }
 }
