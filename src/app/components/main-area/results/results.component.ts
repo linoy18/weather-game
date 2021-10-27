@@ -12,11 +12,10 @@ export class ResultsComponent implements OnInit {
   public sorry: string = 'Sorry, you lost the game...';
 
   constructor(private weatherService: WeatherService) {}
-
+  //sss
   ngOnInit(): void {
     this.getGameResults();
   }
-
 
   public getGameResults() {
     if (this.weatherService.winGame >= 3) {
