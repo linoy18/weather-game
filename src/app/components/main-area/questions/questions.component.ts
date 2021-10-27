@@ -18,7 +18,7 @@ export class QuestionsComponent implements OnInit {
   public temperatureGuess!: string;
   private temperatureReal: any;
   private attempts: number = 0;
-  @Output() finishGame = new EventEmitter();;
+  @Output() finishGame = new EventEmitter();
 
   constructor(private weatherService: WeatherService) {}
 
@@ -32,8 +32,6 @@ export class QuestionsComponent implements OnInit {
 
   public checkHandler() {
     this.checkResult();
-    this.getCurrentCity();
-
   }
   public checkResult() {
     this.getRealTemperatureFromAPI();
@@ -51,9 +49,9 @@ export class QuestionsComponent implements OnInit {
         this.attempts++;
         if (this.attempts == 5) {
           this.finishGame.emit(true);
+        } else {
+          this.getCurrentCity();
         }
       });
-
   }
-
 }
